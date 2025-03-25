@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "pieceName": "string",
+            "unique_id": "string",
+            "side_numeric": 0,
+            "pieceStartX": 0,
+            "pieceStartY": 0,
+            "pieceMoveIndex": [],
+            "pieceKillIndex": [],
+            "is_king": false,
+            "can_become_other_on_opponent_side": {
+                "answer": false,
+                "can_become": [],
+                "transformSpots": []
+            },
+            "can_kill_chain": false
+        }
+    ],
+    "is_standard_board": true,
+    "side_numeric_0": "string",
+    "side_numeric_1": "string",
+    "who_starts": false
+}
