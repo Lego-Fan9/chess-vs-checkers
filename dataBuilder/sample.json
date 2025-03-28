@@ -6,15 +6,16 @@
             "side_numeric": 0,
             "pieceStartX": 0,
             "pieceStartY": 0,
-            "pieceMoveIndex": [],
-            "pieceKillIndex": [],
+            "pieceMoveIndex": [[0, 0], [0, 1]],
+            "pieceKillIndex": [[0, 0], [0, 1]],
             "is_king": false,
             "can_become_other_on_opponent_side": {
                 "answer": false,
                 "can_become": [],
                 "transformSpots": []
             },
-            "can_kill_chain": false
+            "can_kill_chain": false,
+            "startMoveSpecial": []
         }
     ],
     "is_standard_board": true,

@@ -1,0 +1,378 @@
+{
+    "data": [
+        {
+            "pieceName": "k",
+            "unique_id": "k0",
+            "side_numeric": 0,
+            "pieceStartX": 4,
+            "pieceStartY": 0,
+            "pieceMoveIndex": [[1, 1], [1, 0], [1, -1], [0, 1], [0, -1], [-1, 1], [-1, 0], [-1, -1]],
+            "pieceKillIndex": [[1, 1], [1, 0], [1, -1], [0, 1], [0, -1], [-1, 1], [-1, 0], [-1, -1]],
+            "is_king": true,
+            "can_become_other_on_opponent_side": {
+                "answer": false,
+                "can_become": [],
+                "transformSpots": []
+            },
+            "can_kill_chain": false,
+            "startMoveSpecial": []
+        },
+        {
+            "pieceName": "r",
+            "unique_id": "r0",
+            "side_numeric": 0,
+            "pieceStartX": 0,
+            "pieceStartY": 0,
+            "pieceMoveIndex": [
+                [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0],
+                [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7],
+                [-1, 0], [-2, 0], [-3, 0], [-4, 0], [-5, 0], [-6, 0], [-7, 0],
+                [0, -1], [0, -2], [0, -3], [0, -4], [0, -5], [0, -6], [0, -7]
+            ],
+            "pieceKillIndex": [
+                [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0],
+                [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7],
+                [-1, 0], [-2, 0], [-3, 0], [-4, 0], [-5, 0], [-6, 0], [-7, 0],
+                [0, -1], [0, -2], [0, -3], [0, -4], [0, -5], [0, -6], [0, -7]
+            ],
+            "is_king": false,
+            "can_become_other_on_opponent_side": {
+                "answer": false,
+                "can_become": [],
+                "transformSpots": []
+            },
+            "can_kill_chain": false,
+            "startMoveSpecial": []
+        },
+        {
+            "pieceName": "r",
+            "unique_id": "r1",
+            "side_numeric": 0,
+            "pieceStartX": 7,
+            "pieceStartY": 0,
+            "pieceMoveIndex": [
+                [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0],
+                [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7],
+                [-1, 0], [-2, 0], [-3, 0], [-4, 0], [-5, 0], [-6, 0], [-7, 0],
+                [0, -1], [0, -2], [0, -3], [0, -4], [0, -5], [0, -6], [0, -7]
+            ],
+            "pieceKillIndex": [
+                [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0],
+                [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7],
+                [-1, 0], [-2, 0], [-3, 0], [-4, 0], [-5, 0], [-6, 0], [-7, 0],
+                [0, -1], [0, -2], [0, -3], [0, -4], [0, -5], [0, -6], [0, -7]
+            ],
+            "is_king": false,
+            "can_become_other_on_opponent_side": {
+                "answer": false,
+                "can_become": [],
+                "transformSpots": []
+            },
+            "can_kill_chain": false,
+            "startMoveSpecial": []
+        },
+        {
+            "pieceName": "n",
+            "unique_id": "n0",
+            "side_numeric": 0,
+            "pieceStartX": 1,
+            "pieceStartY": 0,
+            "pieceMoveIndex": [
+                [2, 1], [1, 2], [-1, 2], [-2, 1], [-2, -1], [-1, -2], [1, -2], [2, -1]
+            ],
+            "pieceKillIndex": [
+                [2, 1], [1, 2], [-1, 2], [-2, 1], [-2, -1], [-1, -2], [1, -2], [2, -1]
+            ],
+            "is_king": false,
+            "can_become_other_on_opponent_side": {
+                "answer": false,
+                "can_become": [],
+                "transformSpots": []
+            },
+            "can_kill_chain": false,
+            "startMoveSpecial": []
+        },
+        {
+            "pieceName": "n",
+            "unique_id": "n1",
+            "side_numeric": 0,
+            "pieceStartX": 6,
+            "pieceStartY": 0,
+            "pieceMoveIndex": [
+                [2, 1], [1, 2], [-1, 2], [-2, 1], [-2, -1], [-1, -2], [1, -2], [2, -1]
+            ],
+            "pieceKillIndex": [
+                [2, 1], [1, 2], [-1, 2], [-2, 1], [-2, -1], [-1, -2], [1, -2], [2, -1]
+            ],
+            "is_king": false,
+            "can_become_other_on_opponent_side": {
+                "answer": false,
+                "can_become": [],
+                "transformSpots": []
+            },
+            "can_kill_chain": false,
+            "startMoveSpecial": []
+        },
+        {
+            "pieceName": "b",
+            "unique_id": "b0",
+            "side_numeric": 0,
+            "pieceStartX": 2,
+            "pieceStartY": 0,
+            "pieceMoveIndex": [
+                [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7],
+                [-1, 1], [-2, 2], [-3, 3], [-4, 4], [-5, 5], [-6, 6], [-7, 7],
+                [1, -1], [2, -2], [3, -3], [4, -4], [5, -5], [6, -6], [7, -7],
+                [-1, -1], [-2, -2], [-3, -3], [-4, -4], [-5, -5], [-6, -6], [-7, -7]
+            ],
+            "pieceKillIndex": [
+                [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7],
+                [-1, 1], [-2, 2], [-3, 3], [-4, 4], [-5, 5], [-6, 6], [-7, 7],
+                [1, -1], [2, -2], [3, -3], [4, -4], [5, -5], [6, -6], [7, -7],
+                [-1, -1], [-2, -2], [-3, -3], [-4, -4], [-5, -5], [-6, -6], [-7, -7]
+            ],
+            "is_king": false,
+            "can_become_other_on_opponent_side": {
+                "answer": false,
+                "can_become": [],
+                "transformSpots": []
+            },
+            "can_kill_chain": false,
+            "startMoveSpecial": []
+        },
+        {
+            "pieceName": "b",
+            "unique_id": "b1",
+            "side_numeric": 0,
+            "pieceStartX": 5,
+            "pieceStartY": 0,
+            "pieceMoveIndex": [
+                [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7],
+                [-1, 1], [-2, 2], [-3, 3], [-4, 4], [-5, 5], [-6, 6], [-7, 7],
+                [1, -1], [2, -2], [3, -3], [4, -4], [5, -5], [6, -6], [7, -7],
+                [-1, -1], [-2, -2], [-3, -3], [-4, -4], [-5, -5], [-6, -6], [-7, -7]
+            ],
+            "pieceKillIndex": [
+                [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7],
+                [-1, 1], [-2, 2], [-3, 3], [-4, 4], [-5, 5], [-6, 6], [-7, 7],
+                [1, -1], [2, -2], [3, -3], [4, -4], [5, -5], [6, -6], [7, -7],
+                [-1, -1], [-2, -2], [-3, -3], [-4, -4], [-5, -5], [-6, -6], [-7, -7]
+            ],
+            "is_king": false,
+            "can_become_other_on_opponent_side": {
+                "answer": false,
+                "can_become": [],
+                "transformSpots": []
+            },
+            "can_kill_chain": false,
+            "startMoveSpecial": []
+        },
+        {
+            "pieceName": "q",
+            "unique_id": "q0",
+            "side_numeric": 0,
+            "pieceStartX": 3,
+            "pieceStartY": 0,
+            "pieceMoveIndex": [
+                [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0],
+                [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7],
+                [-1, 0], [-2, 0], [-3, 0], [-4, 0], [-5, 0], [-6, 0], [-7, 0],
+                [0, -1], [0, -2], [0, -3], [0, -4], [0, -5], [0, -6], [0, -7],
+                [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7],
+                [-1, 1], [-2, 2], [-3, 3], [-4, 4], [-5, 5], [-6, 6], [-7, 7],
+                [1, -1], [2, -2], [3, -3], [4, -4], [5, -5], [6, -6], [7, -7],
+                [-1, -1], [-2, -2], [-3, -3], [-4, -4], [-5, -5], [-6, -6], [-7, -7]
+            ],
+            "pieceKillIndex": [
+                [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0],
+                [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7],
+                [-1, 0], [-2, 0], [-3, 0], [-4, 0], [-5, 0], [-6, 0], [-7, 0],
+                [0, -1], [0, -2], [0, -3], [0, -4], [0, -5], [0, -6], [0, -7],
+                [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7],
+                [-1, 1], [-2, 2], [-3, 3], [-4, 4], [-5, 5], [-6, 6], [-7, 7],
+                [1, -1], [2, -2], [3, -3], [4, -4], [5, -5], [6, -6], [7, -7],
+                [-1, -1], [-2, -2], [-3, -3], [-4, -4], [-5, -5], [-6, -6], [-7, -7]
+            ],
+            "is_king": false,
+            "can_become_other_on_opponent_side": {
+                "answer": false,
+                "can_become": [],
+                "transformSpots": []
+            },
+            "can_kill_chain": false,
+            "startMoveSpecial": []
+        },
+        {
+            "pieceName": "p",
+            "unique_id": "p0",
+            "side_numeric": 0,
+            "pieceStartX": 0,
+            "pieceStartY": 1,
+            "pieceMoveIndex": [
+                [0, 1]
+            ],
+            "pieceKillIndex": [
+                [1, 1], [-1, 1]
+            ],
+            "is_king": false,
+            "can_become_other_on_opponent_side": {
+                "answer": true,
+                "can_become": ["q", "r", "b", "n"],
+                "transformSpots": [[0, 7], [1, 7], [2, 7], [3, 7], [4, 7], [5, 7], [6, 7], [7, 7]]
+            },
+            "can_kill_chain": false,
+            "startMoveSpecial": [[0, 1]]
+        },
+        {
+            "pieceName": "p",
+            "unique_id": "p1",
+            "side_numeric": 0,
+            "pieceStartX": 1,
+            "pieceStartY": 1,
+            "pieceMoveIndex": [
+                [0, 1]
+            ],
+            "pieceKillIndex": [
+                [1, 1], [-1, 1]
+            ],
+            "is_king": false,
+            "can_become_other_on_opponent_side": {
+                "answer": true,
+                "can_become": ["q", "r", "b", "n"],
+                "transformSpots": [[0, 7], [1, 7], [2, 7], [3, 7], [4, 7], [5, 7], [6, 7], [7, 7]]
+            },
+            "can_kill_chain": false,
+            "startMoveSpecial": [[0, 1]]
+        },
+        {
+            "pieceName": "p",
+            "unique_id": "p2",
+            "side_numeric": 0,
+            "pieceStartX": 2,
+            "pieceStartY": 1,
+            "pieceMoveIndex": [
+                [0, 1]
+            ],
+            "pieceKillIndex": [
+                [1, 1], [-1, 1]
+            ],
+            "is_king": false,
+            "can_become_other_on_opponent_side": {
+                "answer": true,
+                "can_become": ["q", "r", "b", "n"],
+                "transformSpots": [[0, 7], [1, 7], [2, 7], [3, 7], [4, 7], [5, 7], [6, 7], [7, 7]]
+            },
+            "can_kill_chain": false,
+            "startMoveSpecial": [[0, 1]]
+        },
+        {
+            "pieceName": "p",
+            "unique_id": "p3",
+            "side_numeric": 0,
+            "pieceStartX": 3,
+            "pieceStartY": 1,
+            "pieceMoveIndex": [
+                [0, 1]
+            ],
+            "pieceKillIndex": [
+                [1, 1], [-1, 1]
+            ],
+            "is_king": false,
+            "can_become_other_on_opponent_side": {
+                "answer": true,
+                "can_become": ["q", "r", "b", "n"],
+                "transformSpots": [[0, 7], [1, 7], [2, 7], [3, 7], [4, 7], [5, 7], [6, 7], [7, 7]]
+            },
+            "can_kill_chain": false,
+            "startMoveSpecial": [[0, 1]]
+        },
+        {
+            "pieceName": "p",
+            "unique_id": "p4",
+            "side_numeric": 0,
+            "pieceStartX": 4,
+            "pieceStartY": 1,
+            "pieceMoveIndex": [
+                [0, 1]
+            ],
+            "pieceKillIndex": [
+                [1, 1], [-1, 1]
+            ],
+            "is_king": false,
+            "can_become_other_on_opponent_side": {
+                "answer": true,
+                "can_become": ["q", "r", "b", "n"],
+                "transformSpots": [[0, 7], [1, 7], [2, 7], [3, 7], [4, 7], [5, 7], [6, 7], [7, 7]]
+            },
+            "can_kill_chain": false,
+            "startMoveSpecial": [[0, 1]]
+        },
+        {
+            "pieceName": "p",
+            "unique_id": "p5",
+            "side_numeric": 0,
+            "pieceStartX": 5,
+            "pieceStartY": 1,
+            "pieceMoveIndex": [
+                [0, 1]
+            ],
+            "pieceKillIndex": [
+                [1, 1], [-1, 1]
+            ],
+            "is_king": false,
+            "can_become_other_on_opponent_side": {
+                "answer": true,
+                "can_become": ["q", "r", "b", "n"],
+                "transformSpots": [[0, 7], [1, 7], [2, 7], [3, 7], [4, 7], [5, 7], [6, 7], [7, 7]]
+            },
+            "can_kill_chain": false,
+            "startMoveSpecial": [[0, 1]]
+        },
+        {
+            "pieceName": "p",
+            "unique_id": "p6",
+            "side_numeric": 0,
+            "pieceStartX": 6,
+            "pieceStartY": 1,
+            "pieceMoveIndex": [
+                [0, 1]
+            ],
+            "pieceKillIndex": [
+                [1, 1], [-1, 1]
+            ],
+            "is_king": false,
+            "can_become_other_on_opponent_side": {
+                "answer": true,
+                "can_become": ["q", "r", "b", "n"],
+                "transformSpots": [[0, 7], [1, 7], [2, 7], [3, 7], [4, 7], [5, 7], [6, 7], [7, 7]]
+            },
+            "can_kill_chain": false,
+            "startMoveSpecial": [[0, 1]]
+        },
+        {
+            "pieceName": "p",
+            "unique_id": "p7",
+            "side_numeric": 0,
+            "pieceStartX": 7,
+            "pieceStartY": 1,
+            "pieceMoveIndex": [
+                [0, 1]
+            ],
+            "pieceKillIndex": [
+                [1, 1], [-1, 1]
+            ],
+            "is_king": false,
+            "can_become_other_on_opponent_side": {
+                "answer": true,
+                "can_become": ["q", "r", "b", "n"],
+                "transformSpots": [[0, 7], [1, 7], [2, 7], [3, 7], [4, 7], [5, 7], [6, 7], [7, 7]]
+            },
+            "can_kill_chain": false,
+            "startMoveSpecial": [[0, 1]]
+        }
+    ],
+    "is_standard_board": true,
+    "side_numeric_0": "chess",
+    "side_numeric_1": "checkers",
+    "who_starts": false
+}

@@ -1,5 +1,6 @@
 from logger import logger
 
+# Make logger message
 logger_base = '/dataBuilder/boardMaker.py:'
 logger.trace(f'{logger_base} loaded')
 
@@ -35,7 +36,8 @@ class boardManager:
                     "pieceMoveIndex": x["pieceMoveIndex"],
                     "is_king": x["is_king"],
                     "can_become_other_on_opponent_side": x["can_become_other_on_opponent_side"],
-                    "can_kill_chain": x["can_kill_chain"]
+                    "can_kill_chain": x["can_kill_chain"],
+                    "startMoveSpecial": x["startMoveSpecial"]
                 }
                 if x["pieceKillIndex"] == []:
                     new_data["pieceKillIndex"] = x["pieceMoveIndex"]
