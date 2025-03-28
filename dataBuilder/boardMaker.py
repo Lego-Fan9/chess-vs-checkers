@@ -8,7 +8,7 @@ class boardManager:
     def __init__(self, data):
         if data["is_standard_board"] == True:
             self.global_data = {
-                "sides": [x["side_numeric_0"], x["side_numeric_1"]],
+                "sides": [data["side_numeric_0"], data["side_numeric_1"]],
                 "alive_side_0": [],
                 "alive_side_1": [],
                 "is_standard": True,
@@ -16,7 +16,7 @@ class boardManager:
             }
             if data["who_starts"] == False:
                 import random
-                self.globa_data["who_starts"] = random.randint(0, 1)
+                self.global_data["who_starts"] = random.randint(0, 1)
             else: 
                 self.global_data["who_starts"] = data["who_starts"]
             self.moves = []
@@ -43,7 +43,7 @@ class boardManager:
                     new_data["pieceKillIndex"] = x["pieceMoveIndex"]
                 else:
                     new_data["pieceKillIndex"] = x["pieceKillIndex"]
-                self.board[x["pieceStartX"]][x["pieceStartY"]] = new_data
+                self.board[x["pieceStartY"]][x["pieceStartX"]] = new_data
                 alive_side = 'alive_side_' + str(new_data["side_numeric"])
                 self.global_data[alive_side].append(new_data["unique_id"])
                 logger.info(f'{logger_base} created a "{new_data["pieceName"]}" at "{x["pieceStartX"]}, {"pieceStartY"}" with unique_id "{new_data["unique_id"]}"')
@@ -56,7 +56,7 @@ class boardManager:
     def displayBoard(self):
         if self.global_data["is_standard"] == True:
             for row in self.board:
-                print(' '.join([str(piece) if piece else '.' for piece in row]))
+                print(' '.join([str(piece["unique_id"]) if piece else '.' for piece in row]))
         else:
             raise AttributeError(f"'{logger_base}boardManager.displayBoard(): Invalid board, cannot display")
         
