@@ -19,7 +19,6 @@ class boardManager:
                 self.global_data["who_starts"] = random.randint(0, 1)
             else: 
                 self.global_data["who_starts"] = data["who_starts"]
-            self.moves = []
             self.board = [[False, False, False, False, False, False, False, False],
                           [False, False, False, False, False, False, False, False],
                           [False, False, False, False, False, False, False, False],
@@ -48,11 +47,15 @@ class boardManager:
                 self.global_data[alive_side].append(new_data["unique_id"])
                 logger.info(f'{logger_base} created a "{new_data["pieceName"]}" at "{x["pieceStartX"]}, {"pieceStartY"}" with unique_id "{new_data["unique_id"]}"')
                 new_data = {}
-            logger.trace(f'{logger_base} created board: {self.board}')
+            # Next line displays board, but was too spammy
+            # logger.trace(f'{logger_base} created board: {self.board}')
             logger.info(f'{logger_base} created new board')
         else:
             raise AttributeError(f"{logger_base}boardManager.__init__(): Invalid board configuation")
     
+    def register_blackboard(self, blackboard):
+        self.blackboard = blackboard
+
     def displayBoard(self):
         if self.global_data["is_standard"] == True:
             for row in self.board:
@@ -78,11 +81,13 @@ class boardManager:
         self.board[newSpot[0]][newSpot[1]] = self.board[oldSpot[0]][oldSpot[1]]
         self.board[oldSpot[0]][oldSpot[1]] = False
         logger.info(f'{logger_base} moved {pieceName} from {oldSpot} to {newSpot}')
-        self.moves.append({
+        move_data = {
             "pieceName": pieceId, 
             "newSpot": newSpot, 
             "oldSpot": oldSpot,
-            "kill": False})
+            "kill": False,
+            "currentBoard": self.board}
+        self.blackboard.addMove(move_data)
         logger.debug(f'{logger_base} added piece to moves list')
 
     def killPiece(self, pieceId, newSpot, oldSpot):
@@ -104,11 +109,13 @@ class boardManager:
         self.board[newSpot[0]][newSpot[1]] = self.board[oldSpot[0]][oldSpot[1]]
         self.board[oldSpot[0]][oldSpot[1]] = False
         logger.info(f'{logger_base}{oldPiece["unique_id"]} killed by {pieceName} who moved from {oldSpot} to {newSpot}')
-        self.moves.append({
+        move_data = {
             "pieceName": pieceId, 
             "newSpot": newSpot, 
             "oldSpot": oldSpot,
-            "kill": True})
+            "kill": True,
+            "currentBoard": self.board}
+        self.blackboard.addMove(move_data)
         logger.debug(f'{logger_base} added piece to moves list')
         side = self.board[newSpot[0]][newSpot[1]]
         if side == 0:

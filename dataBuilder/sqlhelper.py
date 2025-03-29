@@ -4,6 +4,13 @@ import os
 from typing import Optional
 
 class sqlManager:
+    def __init__(self):
+        self.dbname = os.getenv("DBNAME")
+        self.user = os.getenv("USER")
+        self.password = os.getenv("PASSWORD")
+        self.host=os.getenv("HOST")
+        self.port=os.getenv("PORT")
+
     def _get_sql(self) -> psycopg2.extensions.connection:
         """
         internal function to get sql connection
@@ -13,11 +20,11 @@ class sqlManager:
         """
 
         conn = psycopg2.connect(
-            dbname=os.getenv("DBNAME"),
-            user=os.getenv("USER"),
-            password=os.getenv("PASSWORD"),
-            host=os.getenv("HOST"),
-            port=os.getenv("PORT")
+            dbname=self.dbname,
+            user=self.user,
+            password=self.password,
+            host=self.host,
+            port=self.port
         )
         return conn
     

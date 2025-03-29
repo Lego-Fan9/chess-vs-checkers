@@ -1,4 +1,7 @@
 import logging, os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 log_level = os.getenv('DEBUG_LEVEL', 'PROD')
 file = os.getenv('LOG_FILE', 'N')
