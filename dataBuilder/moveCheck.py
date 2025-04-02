@@ -31,11 +31,23 @@ def moveCheck(board, pieceCord):
     canKill = False
     hasSpecial = False
 
+    # Check for special moves
+    # Adds the special move to the pieceMoveIndex
+    # This pieceMoveIndex is a local clone so it is temporary
+    if piece["startMoveSpecial"]:
+        specials.append(piece["startMoveSpecial"])
+        hasSpecial = True
+        piece["pieceMoveIndex"].append(piece["startMoveSpecial"])
+
     # Check possible moves
     for move in piece["pieceMoveIndex"]:
         newY, newX = y + move[1], x + move[0]
         if 0 <= newY < len(board) and 0 <= newX < len(board[0]):
             if not is_path_blocked(board, pieceCord, [newY, newX]):
+                if not board[newY][newX]:  # Empty spot
+                    moves.append([newY, newX])
+                    canMove = True
+            elif piece["can_jump"] == True:
                 if not board[newY][newX]:  # Empty spot
                     moves.append([newY, newX])
                     canMove = True
@@ -49,15 +61,14 @@ def moveCheck(board, pieceCord):
                 if target and target["side_numeric"] != piece["side_numeric"]:  # Opponent piece
                     kills.append([newY, newX])
                     canKill = True
-
-    # Check for special moves
-    if piece["startMoveSpecial"]:
-        specials.append(piece["startMoveSpecial"])
-        hasSpecial = True
+            elif piece["can_jump"] == True:
+                target = board[newY][newX]
+                if target and target["side_numeric"] != piece["side_numeric"]:  # Opponent piece
+                    kills.append([newY, newX])
+                    canKill = True
 
     boolList = [canMove, canKill, hasSpecial]
     return boolList, moves, kills, specials
-
 
 def is_path_blocked(board, start, end):
     """
@@ -73,6 +84,11 @@ def is_path_blocked(board, start, end):
     """
     startY, startX = start
     endY, endX = end
+
+    # If start and end are the same, no need to check
+    if start == end:
+        return False
+
     deltaY = endY - startY
     deltaX = endX - startX
 
@@ -80,10 +96,22 @@ def is_path_blocked(board, start, end):
     stepX = (deltaX // abs(deltaX)) if deltaX != 0 else 0
 
     currentY, currentX = startY + stepY, startX + stepX
+
+    # Ensure that the loop will terminate at the end
     while (currentY, currentX) != (endY, endX):
-        if board[currentY][currentX]:  # Path is blocked
+        try:
+            if board[currentY][currentX]:  # Path is blocked
+                return True
+        except IndexError:
+            # If out of bounds, treat this as a blocked path
             return True
+
         currentY += stepY
         currentX += stepX
+
+        # Prevent the loop from getting stuck if somehow the increments
+        # are not bringing us closer to the end coordinates
+        if (currentY, currentX) == (startY, startX):
+            return False
 
     return False

@@ -14,9 +14,11 @@ class blackboard:
             "start_side_1": self.boardManager.global_data["alive_side_1"],
             "moves": []
         }
+        self.gameContinue = True
     
     def addMove(self, moveData):
         self.gameBlackboardInternal["moves"].append(moveData)
     
     def gameEnded(self):
+        self.gameContinue = False
         self.sqlManager.postGameData(self.gameBlackboardInternal)

@@ -36,7 +36,8 @@ class boardManager:
                     "is_king": x["is_king"],
                     "can_become_other_on_opponent_side": x["can_become_other_on_opponent_side"],
                     "can_kill_chain": x["can_kill_chain"],
-                    "startMoveSpecial": x["startMoveSpecial"]
+                    "startMoveSpecial": x["startMoveSpecial"],
+                    "can_jump": x["can_jump"]
                 }
                 if x["pieceKillIndex"] == []:
                     new_data["pieceKillIndex"] = x["pieceMoveIndex"]
@@ -75,7 +76,7 @@ class boardManager:
             logger.debug(f'{logger_base} found {pieceName} in the board')
         if self.board[newSpot[0]][newSpot[1]] != False:
             raise AttributeError(f'{logger_base} invalid move to {newSpot} it is populated')
-        if self.board[newSpot[0]][newSpot[1]]["unique_id"] != pieceId:
+        if self.board[newSpot[0]][newSpot[1]] != False:
             raise AttributeError(f'{logger_base} invalid move to {newSpot} internal error with "unique_id"')
         logger.debug(f'{logger_base} all pre-move checks complete and good')
         self.board[newSpot[0]][newSpot[1]] = self.board[oldSpot[0]][oldSpot[1]]
@@ -86,7 +87,8 @@ class boardManager:
             "newSpot": newSpot, 
             "oldSpot": oldSpot,
             "kill": False,
-            "currentBoard": self.board}
+            "currentBoard": self.board,
+            "skipTurn": False}
         self.blackboard.addMove(move_data)
         logger.debug(f'{logger_base} added piece to moves list')
 
@@ -101,8 +103,8 @@ class boardManager:
         else: 
             logger.debug(f'{logger_base} found {pieceName} in the board')
         if self.board[newSpot[0]][newSpot[1]] == False:
-            raise AttributeError(f'{logger_base} invalid kill to {newSpot} it is populated')
-        if self.board[newSpot[0]][newSpot[1]]["unique_id"] != pieceId:
+            raise AttributeError(f'{logger_base} invalid kill to {newSpot} it is not populated')
+        if self.board[newSpot[0]][newSpot[1]]["unique_id"] == pieceId:
             raise AttributeError(f'{logger_base} invalid kill to {newSpot} internal error with "unique_id"')
         logger.trace(f'{logger_base} all pre-move checks complete and good')
         oldPiece = self.board[newSpot[0]][newSpot[1]]
@@ -114,23 +116,38 @@ class boardManager:
             "newSpot": newSpot, 
             "oldSpot": oldSpot,
             "kill": True,
-            "currentBoard": self.board}
+            "currentBoard": self.board,
+            "skipTurn": False}
         self.blackboard.addMove(move_data)
         logger.debug(f'{logger_base} added piece to moves list')
-        side = self.board[newSpot[0]][newSpot[1]]
+        side = oldPiece["side_numeric"]
         if side == 0:
-            self.globa_data["alive_side_0"].remove(pieceId)
+            self.global_data["alive_side_0"].remove(oldPiece["unique_id"])
         elif side == 1:
-            self.global_data["alive_side_1"].remove(pieceId)
+            self.global_data["alive_side_1"].remove(oldPiece["unique_id"])
         else:
             raise AttributeError(f'{logger_base} error getting {pieceId} side')
         logger.trace(f'{logger_base} removed {oldPiece["unique_id"]} from alive list') 
         if oldPiece["is_king"] == True:
             self.global_data["gameEnd"] = True
+            self.blackboard.gameEnded()
             logger.info(f'{logger_base} game is ending')
         if len(self.global_data["alive_side_0"]) <= 0:
             self.global_data["gameEnd"] = True
+            self.blackboard.gameEnded()
             logger.info(f'{logger_base} game is ending')
         elif len(self.global_data["alive_side_1"]) <= 0:
             self.global_data["gameEnd"] = True
+            self.blackboard.gameEnded()
             logger.info(f'{logger_base} game is ending')
+
+    def skipTurn(self):
+        move_data = {
+            "pieceName": None, 
+            "newSpot": None, 
+            "oldSpot": None,
+            "kill": None,
+            "currentBoard": self.board,
+            "skipTurn": True}
+        self.blackboard.addMove(move_data)
+        logger.debug(f'{logger_base} skipped turn')
